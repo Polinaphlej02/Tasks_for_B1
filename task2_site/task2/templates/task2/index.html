@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Банковские счета</title>
+</head>
+<body>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <p><input type="file" name="filename"/></p>
+    <p><button type="submit"> Загрузка</button></p>
+</form>
+</body>
+</html>
