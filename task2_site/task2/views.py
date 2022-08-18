@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
 
-from task2.forms import UpdateDetailsForm
-
 
 def main_page(request):
     if request.method == 'POST':
