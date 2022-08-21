@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from forms import FileUploadForm
 
 
 def main_page(request):
@@ -6,7 +7,7 @@ def main_page(request):
 
 
 def upload(request):
-    if request.method == 'POST':
-        uploaded_file = request.FILES['filename']
-        print(uploaded_file.name)
-    return render(request, 'task2/upload.html')
+    form = FileUploadForm()
+    return render(request, 'task2/upload.html', {
+        'form': form
+    })

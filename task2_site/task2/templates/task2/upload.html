@@ -3,7 +3,7 @@
 {% block content %}
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <p><input type="file" name="filename"/></p>
-    <p><button type="submit"> Загрузка</button></p>
+    {{form}}
 </form>
+<button type="submit" class="btn">Загрузка</button>
 {% endblock %}
