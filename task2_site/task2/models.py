@@ -28,3 +28,9 @@ class OpeningBalance(models.Model):
     debit = models.FloatField()
     credit = models.FloatField()
 
+
+class ExcelFiles(models.Model):
+    id_file = models.AutoField(primary_key=True)
+    file_name = models.CharField(max_length=150)
+    excel_file = models.FileField(upload_to='media/')
+
