@@ -1,9 +1,10 @@
 {% extends "task2/index.html" %}
 
 {% block content %}
+<h2>Upload excel-file</h2>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    {{form}}
+    {{ form }}
+    <button type="submit" class="btn">Upload</button>
 </form>
-<button type="submit" class="btn">Загрузка</button>
 {% endblock %}

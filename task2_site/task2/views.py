@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from forms import FileUploadForm
+from django.shortcuts import render, redirect
+from .forms import FileUploadForm
+from .models import ExcelFiles
 
 
 def main_page(request):
@@ -7,7 +8,13 @@ def main_page(request):
 
 
 def upload(request):
-    form = FileUploadForm()
+    if request.method == 'POST':
+        form = FileUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return render(request, 'task2/index.html')
+    else:
+        form = FileUploadForm()
     return render(request, 'task2/upload.html', {
         'form': form
     })

@@ -1,6 +1,11 @@
 from django.db import models
 
 
+class ExcelFiles(models.Model):
+    id_file = models.AutoField(primary_key=True)
+    excel_file = models.FileField(upload_to='media/', null=True)
+
+
 class ClassTable(models.Model):
     id_class = models.AutoField(primary_key=True)
     class_name = models.CharField(max_length=150)
@@ -28,9 +33,4 @@ class OpeningBalance(models.Model):
     debit = models.FloatField()
     credit = models.FloatField()
 
-
-class ExcelFiles(models.Model):
-    id_file = models.AutoField(primary_key=True)
-    file_name = models.CharField(max_length=150)
-    excel_file = models.FileField(upload_to='media/')
 
